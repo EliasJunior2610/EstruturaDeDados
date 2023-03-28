@@ -1,44 +1,30 @@
-//nome do pacote;
+//Nome do pacote
 package br.repositorios;
-
-//importação;
-import java.util.ArrayList;
-
-//inicializando o repositório;
+//Importação
+import java.util.Stack;
+//Criação da classe
 public class BilheteRepositorio {
-    // criando o ArrayList;
-    private ArrayList<String> bilheteRepositorio;
-
-    // inicializando o ArrayList;
-    public BilheteRepositorio(ArrayList<String> bilheteRepositorio) {
-        super();
-        this.bilheteRepositorio = bilheteRepositorio;
+    //Definindo a pilha
+    private Stack<String> bilhetes;
+    //Inicializando a pilha
+    public BilheteRepositorio() {
+        bilhetes = new Stack<String>();
+    }
+    //Crud da pilha
+    public void addBilheteRepositorio(String bilhete) {
+        bilhetes.push(bilhete);
     }
 
-    // Crud do ArrayList;
-    public ArrayList<String> getBilheteRepositorio() {
-        return bilheteRepositorio;
+    public String getUltimoBilhete() {
+        return bilhetes.peek();
     }
 
-    public void setBilheteRepositorio(ArrayList<String> bilheteRepositorio) {
-        this.bilheteRepositorio = bilheteRepositorio;
-    }
-    
-    public void addBilheteRepositorio(String b) {
-        bilheteRepositorio.add(b);
+    public void removerUltimoBilhete() {
+        bilhetes.pop();
     }
 
-    public void removeBilheteRepositorio(String b) {
-        try {
-            for (int i = 0; i < bilheteRepositorio.size(); i++) {
-                if (bilheteRepositorio.get(i).equals(b)) {
-                    bilheteRepositorio.remove(i);
-                    break;
-                }
-            }
-        } catch (Exception ex) {
-            System.out.println("Erro! O item que você digitou não se encontra na lista!");
-            System.out.println("Apenas itens que se encontram na lista podem ser apagados.");
-        }
+    public Stack<String> getBilheteRepositorio() {
+        return bilhetes;
     }
 }
+

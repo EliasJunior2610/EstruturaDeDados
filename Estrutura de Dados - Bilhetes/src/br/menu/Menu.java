@@ -2,7 +2,7 @@
 //nome do pacote;
 package br.menu;
 
-import java.util.ArrayList;
+import java.util.Stack;
 //importações;
 import java.util.Scanner;
 import br.entidades.*;
@@ -14,7 +14,7 @@ public class Menu {
 	public static void main(String[] args) {
 		// instanciando o Scanner e a classe BilheteRepositorio;
 		Scanner ler = new Scanner(System.in);
-		BilheteRepositorio repositorio = new BilheteRepositorio(new ArrayList<String>());
+		Stack<String> pilhaBilhetes = new Stack<String>();
 		// criando as variáveis;
 		String x, b = "0";
 		int quantidade = 0;
@@ -47,9 +47,8 @@ public class Menu {
 
 				// comprando bilhetes de cinema;
 				if (b.equals("1")) {
-					repositorio.addBilheteRepositorio("Bilhete de Cinema");
-					ArrayList<String> bilhetes = repositorio.getBilheteRepositorio();
-					System.out.printf("Você escolheu comprar %s \n", bilhetes);
+					pilhaBilhetes.push("Bilhete de Cinema");
+					System.out.println("Você escolheu comprar Bilhete de Cinema.");
 					System.out.println("------------------------------");
 					System.out.print("Quantos bilhetes você deseja: ");
 					quantidade = ler.nextInt();
@@ -61,9 +60,8 @@ public class Menu {
 
 					// comprando bilhetes de festa;
 				} else if (b.equals("2")) {
-					repositorio.addBilheteRepositorio("Bilhete de Festa");
-					ArrayList<String> bilhetes = repositorio.getBilheteRepositorio();
-					System.out.printf("Você escolheu comprar %s \n", bilhetes);
+					pilhaBilhetes.push("Bilhete de Festa");
+					System.out.println("Você escolheu comprar Bilhete de Festa.");
 					System.out.println("------------------------------");
 					System.out.print("Quantos bilhetes você deseja: ");
 					quantidade = ler.nextInt();
@@ -75,9 +73,8 @@ public class Menu {
 
 					// comprando bilhetes de show;
 				} else if (b.equals("3")) {
-					repositorio.addBilheteRepositorio("Bilhete de Show");
-					ArrayList<String> bilhetes = repositorio.getBilheteRepositorio();
-					System.out.printf("Você escolheu comprar %s \n", bilhetes);
+					pilhaBilhetes.push("Bilhete de Cinema");
+					System.out.println("Você escolheu comprar Bilhete de Show.");
 					System.out.println("------------------------------");
 					System.out.print("Quantos bilhetes você deseja: ");
 					quantidade = ler.nextInt();
@@ -89,9 +86,8 @@ public class Menu {
 
 					// comprando bilhetes de teatro;
 				} else if (b.equals("4")) {
-					repositorio.addBilheteRepositorio("Bilhete de Teatro");
-					ArrayList<String> bilhetes = repositorio.getBilheteRepositorio();
-					System.out.printf("Você escolheu comprar %s \n", bilhetes);
+					pilhaBilhetes.push("Bilhete de Cinema");
+					System.out.printf("Você escolheu comprar Bilhete de Teatro.");
 					System.out.println("------------------------------");
 					System.out.print("Quantos bilhetes você deseja: ");
 					quantidade = ler.nextInt();
@@ -110,6 +106,7 @@ public class Menu {
 			// fim da estrutura de repetição;
 		} while (x != "1");
 		ler.close();
+		System.out.println("Você finalizou a compra de bilhetes!");
 	}
 
 }
