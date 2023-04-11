@@ -6,7 +6,6 @@ import java.util.Stack;
 //importações;
 import java.util.Scanner;
 import br.entidades.*;
-import br.repositorios.*;
 
 //inicializando a classe;
 public class Menu {
