@@ -3,12 +3,23 @@ package br.entidades;
 //importações;
 import java.util.ArrayList;
 //inicializando a entidade;
-public class BilheteDeFesta extends Bilhete {
+public class Passagem extends Bilhete {
 	//criando o ArrayList;
 	private ArrayList<String> bilhete;
+    //criando a váriavel poltrona, junto com seu getter e setter;
+    private String poltrona;
+    
+    public String getPoltrona() {
+        return poltrona;
+    }
+
+    public void setPoltrona(String poltrona) {
+        this.poltrona = poltrona;
+    }
 	//herdando atributos da entidade mãe;
-    public BilheteDeFesta(double horário, double preço, int quantidade) {
-        super(horário, preço, quantidade);     
+    public Passagem(double horário, double preço, int quantidade, String poltrona) {
+        super(horário, preço, quantidade);  
+        this.poltrona = poltrona;   
     }
     //inicializando o ArrayList;
     private void Bilhete(ArrayList<String> bilhete) {

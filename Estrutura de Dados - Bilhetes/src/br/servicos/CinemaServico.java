@@ -8,7 +8,7 @@ public class CinemaServico implements ICinema {
 	public void cadastrar(double preço, double horário, int quantidade) {
 		// try irá tentar colocar um novo valor para os atributos
 		try {
-            BilheteDeCinema c1 = new BilheteDeCinema(horário, preço, quantidade);
+            BilheteDeCinema c1 = new BilheteDeCinema(horário, preço, quantidade, null);
             c1.setHorario(horário);
             c1.setPreço(preço);
             c1.setQuantidade(quantidade);

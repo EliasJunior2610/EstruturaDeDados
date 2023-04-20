@@ -1,6 +1,6 @@
 package br.servicos;
 //irá importar a entidade de bilhetes
-import br.entidades.BilheteDeFesta;
+import br.entidades.Passagem;
 import br.interfaces.IFesta;
 //implementando a interface.
 public class FestaServico implements IFesta {
@@ -8,7 +8,7 @@ public class FestaServico implements IFesta {
 	public void cadastrar(double preço, double horário, int quantidade) {
 		// try irá tentar colocar um novo valor para os atributos
 		try {
-            BilheteDeFesta f1 = new BilheteDeFesta(horário, preço, quantidade);
+            Passagem f1 = new Passagem(horário, preço, quantidade, null);
             f1.setHorario(horário);
             f1.setPreço(preço);
             f1.setQuantidade(quantidade);
