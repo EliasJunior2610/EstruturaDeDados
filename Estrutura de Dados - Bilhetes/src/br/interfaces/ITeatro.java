@@ -1,5 +1,3 @@
-package br.interfaces;
-
 public interface ITeatro {
     //abre uma classe string para representar o lugar.
     public String lugar = "A4";

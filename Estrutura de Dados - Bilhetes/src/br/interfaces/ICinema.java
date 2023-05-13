@@ -1,5 +1,3 @@
-package br.interfaces;
-
 public interface ICinema {
     // cria uma variavel string para "título, gênero, classificação, idioma, Lugar, sala" todas públicas
     

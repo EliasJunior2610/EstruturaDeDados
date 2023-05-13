@@ -1,9 +1,9 @@
 package br.servicos;
 //irá importar a entidade de bilhetes
 import br.entidades.Passagem;
-import br.interfaces.IFesta;
+import br.interfaces.IPassagem;
 //implementando a interface.
-public class FestaServico implements IFesta {
+public class PassagemServico implements IPassagem {
 	//criamos um método cadastrar e dentro dele instanciamos um novo bilhete e configuramos os atributos dessa instância
 	public void cadastrar(double preço, double horário, int quantidade) {
 		// try irá tentar colocar um novo valor para os atributos

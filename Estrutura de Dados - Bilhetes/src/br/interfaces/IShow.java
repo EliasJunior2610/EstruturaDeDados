@@ -1,5 +1,3 @@
-package br.interfaces;
-
 public interface IShow {
     //abre uma classe string para representar o nome da banda.
     public String nomeDaBanda = "Mamonas Assassinas";
