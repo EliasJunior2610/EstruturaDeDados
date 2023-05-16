@@ -1,19 +1,43 @@
+//importações;
 package br.servicos;
 import br.entidades.BilheteDeTeatro;
 import br.interfaces.ITeatro;
+import java.util.ArrayList;
 //implementando a interface.
 public class TeatroServico implements ITeatro {
-	//criamos um método cadastrar e dentro dele, instanciamos um novo bilhete e configuramos os atributos dessa instância
-	public void cadastrar(double preço, double horário, int quantidade) {
-		// try irá tentar colocar um novo valor para os atributos 
-		try {
-            BilheteDeTeatro t1 = new BilheteDeTeatro(horário, preço, quantidade);
-            t1.setHorario(horário);
-            t1.setPreço(preço);
-            t1.setQuantidade(quantidade);
-        } //catch irá se ativar caso o bloco acima dê erro
-		catch (Exception ex) {
-            System.out.println("Erro!");
+	
+    // criando o ArrayList;
+    private ArrayList<String> bilhete;
+
+    // inicializando o ArrayList;
+    private void Bilhete(ArrayList<String> bilhete) {
+        bilhete = new ArrayList<String>();
+    }
+    
+    // Crud do ArrayList;
+    private ArrayList<String> getBilhete() {
+        return bilhete;
+    }
+
+    private void setBilhete(ArrayList<String> bilhete) {
+        this.bilhete = bilhete;
+    }
+
+    private void addBilhete(String c) {
+        bilhete.add(c);
+    }
+
+    private void removeBilhete(String c) {
+        try {
+            for (int i = 0; i < bilhete.size(); i++) {
+                if (bilhete.get(i) == c) {
+                    bilhete.remove(i);
+                    break;
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println("Erro! O item que você digitou não se encontra na lista!");
+            System.out.println("Apenas item que se encontram na lista podem ser apagados.");
         }
     }
 }

@@ -1,18 +1,40 @@
 package br.servicos;
-//irá importar a entidade de bilhetes
+//importações
 import br.entidades.Bilhete;
+import java.util.ArrayList;
 public class BilheteServico {
-	//criamos um método cadastrar e dentro dele instanciamos um novo bilhete e configuramos os atributos dessa instância
-    public void cadastrar(double preço, double horário, int quantidade) {
-    	// try irá tentar colocar um novo valor para os atributos
-    	try {
-            Bilhete b1 = new Bilhete(horário, preço, quantidade);
-            b1.setHorario(horário);
-            b1.setPreço(preço);
-            b1.setQuantidade(quantidade);
-        } //catch irá se ativar caso o bloco acima dê erro 
-    	catch (Exception ex) {
-            System.out.println("Erro!");
-        }
-    }       
+
+	// criando o ArrayList;
+	private ArrayList<String> bilhete;
+
+	// inicializando o ArrayList;
+	private Bilhete(ArrayList<String> bilhete) {
+		bilhete = new ArrayList<String>();
+	}
+    // Crud do ArrayList;
+	private ArrayList<String> getBilhete() {
+		return bilhete;
+	}
+
+	private void setBilhete(ArrayList<String> bilhete) {
+		this.bilhete = bilhete;
+	}
+
+	private void addBilhete(String b) {
+		bilhete.add(b);
+	}
+
+	private void removeBilhete(String b) {
+		try {
+			for (int i = 0; i < bilhete.size(); i++) {
+				if (bilhete.get(i) == b) {
+					bilhete.remove(i);
+					break;
+				}
+			}
+		} catch (Exception ex) {
+			System.out.println("Erro! O item que você digitou não se encontra na lista!");
+			System.out.println("Apenas item que se encontram na lista podem ser apagados.");
+		}
+	}
 }
