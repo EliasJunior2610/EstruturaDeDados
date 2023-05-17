@@ -1,9 +1,8 @@
 //Alunos: Denyel Fernando, Elias Sales, João Pedro, Luan Santos, Lucas Oliveira, João Carlos e Ricardo Junior.
 //nome do pacote;
 package br.menu;
-
-import java.util.Stack;
 //importações;
+import java.util.LinkedList;
 import java.util.Scanner;
 import br.entidades.*;
 
@@ -13,7 +12,8 @@ public class Menu {
 	public static void main(String[] args) {
 		// instanciando o Scanner e a classe BilheteRepositorio;
 		Scanner ler = new Scanner(System.in);
-		Stack<String> pilhaBilhetes = new Stack<String>();
+		LinkedList<String> listaBilhetes = new LinkedList<String>();
+
 		// criando as variáveis;
 		String x, b = "0";
 		int quantidade = 0;
@@ -46,7 +46,7 @@ public class Menu {
 
 				// comprando bilhetes de cinema;
 				if (b.equals("1")) {
-					pilhaBilhetes.push("Bilhete de Cinema");
+					listaBilhetes.add("Bilhete de Cinema");
 					System.out.println("Você escolheu comprar Bilhete de Cinema.");
 					System.out.println("------------------------------");
 					System.out.print("Quantos bilhetes você deseja: ");
@@ -59,7 +59,7 @@ public class Menu {
 
 				// comprando passagens;
 				} else if (b.equals("2")) {
-					pilhaBilhetes.push("Passagem");
+					listaBilhetes.add("Passagem");
 					System.out.println("Você escolheu comprar Passagem.");
 					System.out.println("------------------------------");
 					System.out.print("Quantos bilhetes você deseja: ");
@@ -72,7 +72,7 @@ public class Menu {
 
 					// comprando bilhetes de show;
 				} else if (b.equals("3")) {
-					pilhaBilhetes.push("Bilhete de Cinema");
+					listaBilhetes.add("Bilhete de Show");
 					System.out.println("Você escolheu comprar Bilhete de Show.");
 					System.out.println("------------------------------");
 					System.out.print("Quantos bilhetes você deseja: ");
@@ -85,7 +85,7 @@ public class Menu {
 
 					// comprando bilhetes de teatro;
 				} else if (b.equals("4")) {
-					pilhaBilhetes.push("Bilhete de Cinema");
+					listaBilhetes.add("Bilhete de Teatro");
 					System.out.printf("Você escolheu comprar Bilhete de Teatro.");
 					System.out.println("------------------------------");
 					System.out.print("Quantos bilhetes você deseja: ");
@@ -105,6 +105,7 @@ public class Menu {
 			// fim da estrutura de repetição;
 		} while (x != "1");
 		ler.close();
+		listaBilhetes.clear();
 		System.out.println("Você finalizou a compra de bilhetes!");
 	}
 
